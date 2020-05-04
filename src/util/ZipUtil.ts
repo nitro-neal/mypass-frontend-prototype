@@ -1,14 +1,14 @@
-import JSZip from 'jszip';
+import JSZip from "jszip";
 // tslint:disable-next-line:no-var-requires
-const JSZipUtils = require('jszip-utils');
+const JSZipUtils = require("jszip-utils");
 
 class ZipUtil {
   static async zip(input: string): Promise<Blob> {
     const zip = new JSZip();
-    zip.file('encrypted.txt', input);
+    zip.file("encrypted.txt", input);
     return await zip.generateAsync({
-      type: 'blob',
-      compression: 'DEFLATE'
+      type: "blob",
+      compression: "DEFLATE",
     });
   }
 
@@ -25,7 +25,7 @@ class ZipUtil {
 
     const zip: JSZip = await JSZip.loadAsync(data);
     const unzippedFile: string = Object.keys(zip.files)[0];
-    return await zip.files[unzippedFile].async('string');
+    return await zip.files[unzippedFile].async("string");
   }
 }
 
