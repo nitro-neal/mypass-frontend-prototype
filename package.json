@@ -2,6 +2,9 @@
   "name": "mypass-frontend",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "13.6.x"
+  },
   "main": "index.js",
   "scripts": {
     "start": "npx webpack-dev-server --mode=development --colors --config webpack.config.dev.ts",
